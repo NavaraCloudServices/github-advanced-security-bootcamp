@@ -48,6 +48,8 @@ You will get your hands dirty when it comes to Secret Scanning.
 - Check how the validity works in the alert
 - Try to commit and push another secret. Remove the secret from your git history (follow the links in the block message)
 - Don't forget to revoke your GitHub PAT!
+- View your e-mails and see the notifications
+- View the closed alert in the Secret Scanning Default tab
 
 ### Detected by Copilot Secret Scanning
 - After about five minutes you will see a couple of generated alerts that are Detected by Copilot Secret Scanning. The repository needs to be analysed first and this takes a while
