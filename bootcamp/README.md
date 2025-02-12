@@ -31,6 +31,7 @@ You will get your hands dirty when it comes to Secret Scanning.
 ### Exclude a folder
 
 - Exclude the test folder by creating a “secret_scanning.yml" file in the .github folder of your repository.
+- Notice that the alerts are closed from the Secret Scanning Experimental tab that are from the tests folder. 
 
 ### Add a secret
 
