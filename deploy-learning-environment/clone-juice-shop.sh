@@ -2,7 +2,8 @@
 SRC_ORG="juice-shop"
 SRC_REPO="juice-shop"
 TGT_ORG="NavaraLabs"
-TGT_REPO="joost-juice-shop10"
+TGT_REPO="joost-juice-shop"
+rm -rf juice-shop
 
 echo "Cloning repository ${SRC_ORG}/${SRC_REPO}..."
 gh repo clone "${SRC_ORG}/${SRC_REPO}" -- --depth=1 || { echo "Failed to clone ${SRC_ORG}/${SRC_REPO}"; exit 1; }
@@ -10,7 +11,7 @@ gh repo clone "${SRC_ORG}/${SRC_REPO}" -- --depth=1 || { echo "Failed to clone $
 cd "${SRC_REPO}" || { echo "Directory ${SRC_REPO} not found"; exit 1; }
 
 echo "Creating new repository ${TGT_ORG}/${TGT_REPO}..."
-gh repo create "${TGT_ORG}/${TGT_REPO}" --yes --private || { echo "Failed to create repository ${TGT_ORG}/${TGT_REPO}"; exit 1; }
+gh repo create "${TGT_ORG}/${TGT_REPO}" -y --private || { echo "Failed to create repository ${TGT_ORG}/${TGT_REPO}"; exit 1; }
 
 echo "Remove all stuff that we don't need"
 rm -rf .git
