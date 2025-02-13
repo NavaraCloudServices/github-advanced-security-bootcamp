@@ -100,3 +100,4 @@ You will get your hands dirty when it comes to Dependency Management and Dependa
   - Add 'Required status checks to pass' and select the 'Dependency review' check
 - Create a new branch, add "lodash": "4.17.21" to the 'package.json' file and commit the change
 - Create a Pull Request. See that the Dependency review pipeline runs. Check the feedback in the PR
+- If you want and have time, you can also add an old version of lodash that will block the PR from merging
