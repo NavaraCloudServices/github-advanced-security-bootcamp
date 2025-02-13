@@ -75,7 +75,7 @@ You will get your hands dirty when it comes to Dependency Management and Dependa
 - Enable Dependabot Alerts in the settings of your provided classroom repository
 - Check the Dependabot Alerts in the Security tab.
 - Open the 'marsdb' alert and notice that it is a Command Injection vulnerability. Notice that there is no fix available.
- - Check the vulnerability details like CWE, CVE and Severity
+- Check the vulnerability details like CWE, CVE and Severity
 - Create a 'Dependabot rule' to dismiss the alert until a patch is available. Use ecosystem:npm as target for easyness
   - Note: If you can't create a rule, this is most likely because Advanced Security is not enabled on the repository. Enable it and try again.
 
@@ -114,6 +114,7 @@ You will get your hands dirty when it comes to Secret Scanning.
 - Check the Actions tab and check the CodeQL workflow/logs
 - Go to the Security tab to check the Code Scanning Alerts. Analyse some critical and high severities (press the 'show more' to get more context)
   - Check the CWE
+  - Create an issue from the alert
 
 ### GitHub Copilot Autofix
 
@@ -132,3 +133,34 @@ You will get your hands dirty when it comes to Secret Scanning.
 
 - Go to the Code scanning settings and switch to Advanced CodeQL scanning. Here you can customize the workflow
 - Remove the python analysis and save the workflow
+
+## Exercise 4 - Advanced Code Scanning
+
+## Exercise 5 - GHAS Administration
+
+### Create a Security Configuration
+
+- Set some global configuration like:
+  - Grouped security updates
+  - Dependabot on Actions runners
+  - Scan for generic secrets
+- Create a security configuration and enable all features
+  - Notice that some features needs to be set on repo level (like version updates and advanced codeql setup)
+- Apply the configuration to your juice-shop repository
+- Check the juice-shop repository settings and see the configuration applied. The settings in your configuration cannot be changed on repo level
+
+## Exercise 6 - Dashboardig and Security Campaigns
+
+### Security
+
+- Go to the Security tab. Check all the tabs
+- Can you find your bypassed secret push?
+
+### Insights
+
+- Go to the Insights tab. Check the dependencies and their licenses
+
+### Security Campaigns
+
+- Create a security campaign (can be done from the security tab in the organisation)
+- Create a new campaign to fix all the critical severity alerts
