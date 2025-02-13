@@ -18,6 +18,7 @@ rm -rf .git
 rm -rf .github/workflows
 rm -rf .dependabot
 rm -rf .gitlab
+rm -rf data/static/codefixes
 
 echo "Reinitializing the repository..."
 git init

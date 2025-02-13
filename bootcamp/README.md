@@ -75,6 +75,7 @@ You will get your hands dirty when it comes to Dependency Management and Dependa
 - Enable Dependabot Alerts in the settings of your provided classroom repository
 - Check the Dependabot Alerts in the Security tab.
 - Open the 'marsdb' alert and notice that it is a Command Injection vulnerability. Notice that there is no fix available.
+ - Check the vulnerability details like CWE, CVE and Severity
 - Create a 'Dependabot rule' to dismiss the alert until a patch is available. Use ecosystem:npm as target for easyness
   - Note: If you can't create a rule, this is most likely because Advanced Security is not enabled on the repository. Enable it and try again.
 
@@ -101,3 +102,33 @@ You will get your hands dirty when it comes to Dependency Management and Dependa
 - Create a new branch, add "lodash": "4.17.21" to the 'package.json' file and commit the change
 - Create a Pull Request. See that the Dependency review pipeline runs. Check the feedback in the PR
 - If you want and have time, you can also add an old version of lodash that will block the PR from merging
+
+## Exercise 3 - Code Scanning
+
+You will get your hands dirty when it comes to Secret Scanning.
+
+### Enable Basic Code Scanning
+
+- Enable CodeQL analysis in the settings of your provided classroom repository. Choose the basic option and leave the defaults.
+  - Also turn on 'Copilot Autofix'
+- Check the Actions tab and check the CodeQL workflow/logs
+- Go to the Security tab to check the Code Scanning Alerts. Analyse some critical and high severities (press the 'show more' to get more context)
+  - Check the CWE
+
+### GitHub Copilot Autofix
+
+- Open a Code Scanning alert
+- Click on the 'Autofix' button
+- Check the solution and commit the fix towards a new branch
+- Notice the PR that is created and that CodeQL checks are running
+
+### Branch policies
+
+- Create a branch ruleset (go to the repository settings, rules and create a new branch ruleset)
+  - Include the default branch
+  - Add 'Required code scanning results'. Notice that CodeQL is already there
+
+### Advanced CodeQL scanning
+
+- Go to the Code scanning settings and switch to Advanced CodeQL scanning. Here you can customize the workflow
+- Remove the python analysis and save the workflow
