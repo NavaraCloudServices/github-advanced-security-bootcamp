@@ -136,6 +136,22 @@ You will get your hands dirty when it comes to Secret Scanning.
 
 ## Exercise 4 - Advanced Code Scanning
 
+### Getting started with the codeql CLI
+
+- Follow the instructions on the [Getting started with the codeql CLI](https://docs.github.com/en/code-security/codeql-cli/getting-started-with-the-codeql-cli/setting-up-the-codeql-cli) page
+
+### Preparing your code for CodeQL analysis
+
+- Follow the instructions on the [](https://docs.github.com/en/code-security/codeql-cli/getting-started-with-the-codeql-cli/preparing-your-code-for-codeql-analysis) page
+
+### Analyzing your code with CodeQL queries
+
+- Follow the instructions on the [](https://docs.github.com/en/code-security/codeql-cli/getting-started-with-the-codeql-cli/analyzing-your-code-with-codeql-queries) page
+
+### Analyzing your code with CodeQL queries
+
+- Follow the instructions on the [](https://docs.github.com/en/code-security/codeql-cli/getting-started-with-the-codeql-cli/analyzing-your-code-with-codeql-queries) page
+
 ## Exercise 5 - GHAS Administration
 
 ### Create a Security Configuration
@@ -164,3 +180,7 @@ You will get your hands dirty when it comes to Secret Scanning.
 
 - Create a security campaign (can be done from the security tab in the organisation)
 - Create a new campaign to fix all the critical severity alerts
+
+
+
+
