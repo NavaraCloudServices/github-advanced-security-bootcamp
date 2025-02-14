@@ -180,7 +180,3 @@ You will get your hands dirty when it comes to Secret Scanning.
 
 - Create a security campaign (can be done from the security tab in the organisation)
 - Create a new campaign to fix all the critical severity alerts
-
-
-
-
