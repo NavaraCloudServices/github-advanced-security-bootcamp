@@ -136,9 +136,16 @@ You will get your hands dirty when it comes to Secret Scanning.
 
 ## Exercise 4 - Advanced Code Scanning
 
+### Swicht to security-and-quality
+
+- Adjust your CodeQL workflow so that it uses the `security-and-quality` queries
+- Analyse the alerts, you will notice that there are more alerts now
+
 ### Getting started with the codeql CLI
 
 - Follow the instructions on the [Getting started with the codeql CLI](https://docs.github.com/en/code-security/codeql-cli/getting-started-with-the-codeql-cli/setting-up-the-codeql-cli) page
+
+Instead of downloading the CLI manually, you can also use the Visual Studio Code extension for CodeQL. See [the extension in the marketplace](https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-codeql)
 
 ### Preparing your code for CodeQL analysis
 
