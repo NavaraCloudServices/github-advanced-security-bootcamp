@@ -129,17 +129,23 @@ You will get your hands dirty when it comes to Secret Scanning.
   - Include the default branch
   - Add 'Required code scanning results'. Notice that CodeQL is already there
 
-### Advanced CodeQL scanning
+### Switch to Advanced CodeQL scanning
 
 - Go to the Code scanning settings and switch to Advanced CodeQL scanning. Here you can customize the workflow
-- Remove the python analysis and save the workflow
+- Remove the python analysis and save the workflow. Notice that it uses a matrix
 
 ## Exercise 4 - Advanced Code Scanning
 
-### Swicht to security-and-quality
+### Switch to security-and-quality
 
-- Adjust your CodeQL workflow so that it uses the `security-and-quality` queries
+- Adjust your CodeQL workflow so that it uses the `security-and-quality` query suite
 - Analyse the alerts, you will notice that there are more alerts now
+
+### Create a configuration file
+
+- Create a `codeql-config.yml`file
+- Use security-extended as the query suite
+- Only include the `frontend` and the `tests` folder
 
 ### Getting started with the codeql CLI
 
@@ -150,10 +156,6 @@ Instead of downloading the CLI manually, you can also use the Visual Studio Code
 ### Preparing your code for CodeQL analysis
 
 - Follow the instructions on the [](https://docs.github.com/en/code-security/codeql-cli/getting-started-with-the-codeql-cli/preparing-your-code-for-codeql-analysis) page
-
-### Analyzing your code with CodeQL queries
-
-- Follow the instructions on the [](https://docs.github.com/en/code-security/codeql-cli/getting-started-with-the-codeql-cli/analyzing-your-code-with-codeql-queries) page
 
 ### Analyzing your code with CodeQL queries
 
