@@ -11,7 +11,8 @@ Some handy links that you might need:
 - [GitHub Docs](https://docs.github.com/en)
 - [Copilot in GitHub Support](https://support.github.com/success/copilot)
 
-** Excercises **
+**Excercises**
+
 - [Secret Scanning](#exercise-1---secret-scanning)
 - [Dependency Management](#exercise-2---dependency-management)
 - [Code Scanning](#exercise-3---code-scanning)
