@@ -11,6 +11,14 @@ Some handy links that you might need:
 - [GitHub Docs](https://docs.github.com/en)
 - [Copilot in GitHub Support](https://support.github.com/success/copilot)
 
+** Excercises **
+- [Secret Scanning](#exercise-1---secret-scanning)
+- [Dependency Management](#exercise-2---dependency-management)
+- [Code Scanning](#exercise-3---code-scanning)
+- [Advanced Code Scanning](#exercise-4---advanced-code-scanning)
+- [GHAS Administration](#exercise-5---ghas-administration)
+- [Dashboardig and Security Campaigns](#exercise-6---dashboardig-and-security-campaigns)
+
 ## Exercise 1 - Secret Scanning
 
 You will get your hands dirty when it comes to Secret Scanning.
