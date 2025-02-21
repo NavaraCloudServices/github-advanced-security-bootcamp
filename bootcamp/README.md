@@ -75,7 +75,7 @@ You will get your hands dirty when it comes to Dependency Management and Dependa
 - Enable Dependabot Alerts in the settings of your provided classroom repository
 - Check the Dependabot Alerts in the Security tab.
 - Open the 'marsdb' alert and notice that it is a Command Injection vulnerability. Notice that there is no fix available.
-- Check the vulnerability details like CWE, CVE and Severity
+- Check the vulnerability details like CWE, CVE and Severity. Sort on EPSS and analyse the alert that has the highest EPSS score
 - Create a 'Dependabot rule' to dismiss the alert until a patch is available. Use ecosystem:npm as target for easyness
   - Note: If you can't create a rule, this is most likely because Advanced Security is not enabled on the repository. Enable it and try again.
 
