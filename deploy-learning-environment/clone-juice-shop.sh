@@ -1,4 +1,5 @@
 #!/bin/bash
+# Install https://cli.github.com first
 gh extension install mislav/gh-repo-collab
 
 SRC_ORG="juice-shop"

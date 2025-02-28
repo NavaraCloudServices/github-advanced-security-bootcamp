@@ -1,5 +1,5 @@
-# Install required GitHub CLI extension
-#gh extension install mislav/gh-repo-collab
+# Install https://cli.github.com first
+gh extension install mislav/gh-repo-collab
 
 # Repository and organization settings
 $SRC_ORG = "juice-shop"
