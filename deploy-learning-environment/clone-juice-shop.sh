@@ -1,8 +1,10 @@
 #!/bin/bash
+gh extension install mislav/gh-repo-collab
+
 SRC_ORG="juice-shop"
 SRC_REPO="juice-shop"
 TGT_ORG="NavaraLabs"
-TGT_REPO="joost-juice-shop"
+TGT_REPO="joostvoskuil,jorismolenaar"  # comma separated list
 rm -rf juice-shop
 
 echo "Cloning repository ${SRC_ORG}/${SRC_REPO}..."
@@ -10,8 +12,13 @@ gh repo clone "${SRC_ORG}/${SRC_REPO}" -- --depth=1 || { echo "Failed to clone $
 
 cd "${SRC_REPO}" || { echo "Directory ${SRC_REPO} not found"; exit 1; }
 
-echo "Creating new repository ${TGT_ORG}/${TGT_REPO}..."
-gh repo create "${TGT_ORG}/${TGT_REPO}" -y --private || { echo "Failed to create repository ${TGT_ORG}/${TGT_REPO}"; exit 1; }
+echo "Creating new repositories..."
+IFS=',' read -ra repos <<< "$TGT_REPO"
+for repo in "${repos[@]}"; do
+    repo=$(echo "$repo" | xargs)  # trim whitespace
+    echo "Creating new repository ${TGT_ORG}/${repo}..."
+    gh repo create "${TGT_ORG}/${repo}" -y --private || { echo "Failed to create repository ${TGT_ORG}/${repo}"; exit 1; }
+done
 
 echo "Remove all stuff that we don't need"
 rm -rf .git
@@ -34,10 +41,18 @@ echo "Pushing the content"
 git add -A
 git commit -m "Initial commit"
 
-echo "Adding new remote 'origin' for ${TGT_ORG}/${TGT_REPO}..."
-git remote add origin "https://github.com/${TGT_ORG}/${TGT_REPO}.git"
-
-git push -u origin main
+echo "Pushing the content to each repository"
+for repo in "${repos[@]}"; do
+    repo=$(echo "$repo" | xargs)  # trim whitespace
+    echo "Adding remote 'origin-${repo}' for ${TGT_ORG}/${repo}..."
+    git remote add "origin-${repo}" "https://github.com/${TGT_ORG}/${repo}.git"
+    git push -u "origin-${repo}" main
+    git remote remove "origin-${repo}"
+    
+    # Grant admin permissions to the user
+    echo "Granting admin permissions to ${repo} on ${TGT_ORG}/${repo}..."
+    gh repo-collab add "${TGT_ORG}/${repo}" "${repo}" --permission admin
+done
 
 echo "Removing the local cloned."
 cd ..
