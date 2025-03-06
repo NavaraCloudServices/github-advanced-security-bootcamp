@@ -46,9 +46,9 @@ echo "Pushing the content to each repository"
 for repo in "${repos[@]}"; do
     repo=$(echo "$repo" | xargs)  # trim whitespace
     echo "Adding remote 'origin-${repo}' for ${TGT_ORG}/${repo}..."
-    git remote add "origin-${repo}" "https://github.com/${TGT_ORG}/${repo}.git"
-    git push -u "origin-${repo}" main
-    git remote remove "origin-${repo}"
+    git remote add "origin" "https://github.com/${TGT_ORG}/${repo}.git"
+    git push -u "origin" main
+    git remote remove "origin"
     
     # Grant admin permissions to the user
     echo "Granting admin permissions to ${repo} on ${TGT_ORG}/${repo}..."

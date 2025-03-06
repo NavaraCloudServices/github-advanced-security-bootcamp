@@ -60,9 +60,9 @@ git commit -m "Initial commit"
 Write-Host "Pushing the content to each repository"
 foreach ($repo in $repos) {
     Write-Host "Adding remote 'origin-${repo}' for ${TGT_ORG}/${repo}..."
-    git remote add "origin-${repo}" "https://github.com/${TGT_ORG}/${repo}.git"
-    git push -u "origin-${repo}" main
-    git remote remove "origin-${repo}"
+    git remote add "origin" "https://github.com/${TGT_ORG}/${repo}.git"
+    git push -u "origin" main
+    git remote remove "origin"
     
     # Grant admin permissions to the user
     Write-Host "Granting admin permissions to ${repo} on ${TGT_ORG}/${repo}..."
