@@ -9,7 +9,7 @@ Sometimes you need to look up information. You can use your search engine or AI 
 Some handy links that you might need:
 
 - [GitHub Docs](https://docs.github.com/en)
-- [Copilot in GitHub Support](https://support.github.com)
+- [Copilot in GitHub Support](https://support.github.com/success/copilot)
 
 **Exercises**
 
