@@ -9,7 +9,8 @@ Sometimes you need to look up information. You can use your search engine or AI 
 Some handy links that you might need:
 
 - [GitHub Docs](https://docs.github.com/en)
-- [Copilot in GitHub Support](https://support.github.com/success/copilot)
+- [GitHub Support](https://support.github.com/)
+- [Copilot in GitHub Support (only if you have a GitHub Copilot license)](https://support.github.com/success/copilot)
 
 **Exercises**
 
@@ -26,8 +27,10 @@ You will get your hands dirty when it comes to Secret Scanning.
 
 ### Enabling Secret Scanning
 
-- Go to the settings of your provided classroom repository.
-- Notice that Advanced Security is disabled. This is because it is a private repository.
+- Accept the invite to your provided classroom GitHub Organization. This organization is sponsored by GitHub.
+- You see one repository called `juice-shop`. This is a private repository.
+- Go to the settings of the repository and check the Advanced Security settings.
+- Notice that Advanced Security is disabled. This is because it is a private repository. Enable Advanced Security
 - Enable Secret Scanning in your classroom repository
   - Including 'Scan for generic secrets'
   - Including 'Non-provider patterns'
@@ -35,21 +38,25 @@ You will get your hands dirty when it comes to Secret Scanning.
 
 ### Examine alerts
 
-- Examine the alerts in the Secret Scanning Experimental tab. You will notice four 'HTTP bearer authentication header' alerts.
+- Examine the alerts in the Secret Scanning Generic tab. You will notice four 'HTTP bearer authentication header' alerts.
 - Dismiss one of the alerts as a false positive / used in tests
 
 ### Exclude a folder
 
-- Exclude the test folder by creating a “secret_scanning.yml" file in the .github folder of your repository.
-- Notice that the alerts from the tests folder are closed in the Secret Scanning Experimental tab.
+- Exclude the test folder by creating a `secret_scanning.yml` file in the `.github` folder of your repository.
+- Notice that the alerts from the tests folder are closed in the Secret Scanning Generic tab.
 
 ### Add a secret
 
+- Generate a GitHub PAT (Personal Access Token) with the following scopes:
+  - repo
+  - read:org
+- Copy the token to your clipboard and delete the token directly to prevent token leaks,
 - Create a file in the root of the git repository. Name it `something.json` and add the following content:
 
 ```json
 {
-  "value": "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"
+  "value": "<your generated token>"
 }
 ```
 
@@ -58,16 +65,16 @@ You will get your hands dirty when it comes to Secret Scanning.
 ### Push protection
 
 - Enable push protection for the repository
-- Try to commit and push a secret. For example, a GitHub PAT (and change one letter). Expose the secret by pushing anyway (follow the links in the block message)
+- Try to commit and push a secret. For example, the GitHub PAT of the previous section. Expose the secret by pushing anyway (follow the links in the block message)
 - Check how the validity works in the alert
 - Try to commit and push another secret. Remove the secret from your git history (follow the links in the block message)
 - Don't forget to revoke your GitHub PAT!
 - View your emails and see the notifications
 - View the closed alert in the Secret Scanning Default tab
 
-### Detected by Copilot Secret Scanning
+### Detected by 'Scan for generic passwords'
 
-- After about five minutes, you will see a couple of generated alerts that are Detected by Copilot Secret Scanning. The repository needs to be analyzed first and this takes a while.
+- After about five minutes, you will see a couple of generated alerts that are Detected by Copilot Secret Scanning/Scan for generic passwords. The repository needs to be analyzed first and this takes a while.
 - Examine those secrets.
 
 ## Exercise 2 - Dependency Management
@@ -94,7 +101,7 @@ You will get your hands dirty when it comes to Dependency Management and Dependa
 - Notice the Pull Requests that are created by Dependabot. This can take a couple of minutes. Check your action workflows runs.
 - Notice in the Dependabot Alerts tab you will see information about the Pull Request.
 - Some alerts do not contain a security update. Analyze why this is.
-- Enable 'Grouped Version Updates' in the settings of your provided classroom repository. Check again your action workflows runs.
+- Enable 'Grouped Security Updates' in the settings of your provided classroom repository. Check again your action workflows runs.
 - You will notice that the created pull requests are dismissed and a new one is created, grouping the pull requests.
 
 ### Dependabot version updates
@@ -174,10 +181,10 @@ Instead of downloading the CLI manually, you can also use the Visual Studio Code
 
 ### Create a Security Configuration
 
-- Set some global configuration like:
+- Go to the organization settings and check the Advanced Security settings
+- Set some global settings like:
   - Grouped security updates
   - Dependabot on Actions runners
-  - Scan for generic secrets
 - Create a security configuration and enable all features
   - Notice that some features need to be set on repo level (like version updates and advanced codeql setup)
 - Apply the configuration to your juice-shop repository
