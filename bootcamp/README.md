@@ -14,24 +14,24 @@ Some handy links that you might need:
 
 **Exercises**
 
-- [Secret Scanning](#exercise-1---secret-scanning)
+- [Secret Protection](#exercise-1---secret-protection)
 - [Dependency Management](#exercise-2---dependency-management)
-- [Code Scanning](#exercise-3---code-scanning)
-- [Advanced Code Scanning](#exercise-4---advanced-code-scanning)
+- [Code Security](#exercise-3---code-security)
+- [Advanced Code Security](#exercise-4---advanced-code-security)
 - [GHAS Administration](#exercise-5---ghas-administration)
 - [Dashboarding and Security Campaigns](#exercise-6---dashboarding-and-security-campaigns)
 
-## Exercise 1 - Secret Scanning
+## Exercise 1 - Secret Protection
 
-You will get your hands dirty when it comes to Secret Scanning.
+You will get your hands dirty when it comes to Secret Protection.
 
-### Enabling Secret Scanning
+### Enabling Secret Protection
 
 - Accept the invite to your provided classroom GitHub Organization. This organization is sponsored by GitHub.
 - You see one repository called `juice-shop`. This is a private repository.
 - Go to the settings of the repository and check the Advanced Security settings.
 - Notice that Advanced Security is disabled. This is because it is a private repository. Enable Advanced Security
-- Enable Secret Scanning in your classroom repository
+- Enable Secret Protection in your classroom repository
   - Including 'Scan for generic secrets'
   - Including 'Non-provider patterns'
   - Don't enable push protection
@@ -119,11 +119,11 @@ You will get your hands dirty when it comes to Dependency Management and Dependa
 - Create a Pull Request. See that the Dependency review pipeline runs. Check the feedback in the PR.
 - If you want and have time, you can also add an old version of lodash that will block the PR from merging.
 
-## Exercise 3 - Code Scanning
+## Exercise 3 - Code Security 
 
-You will get your hands dirty when it comes to Code Scanning.
+You will get your hands dirty when it comes to Code Security.
 
-### Enable Basic Code Scanning
+### Enable Basic Code Security
 
 - Enable CodeQL analysis in the settings of your provided classroom repository. Choose the basic option and leave the defaults.
   - Also turn on 'Copilot Autofix'
@@ -150,7 +150,7 @@ You will get your hands dirty when it comes to Code Scanning.
 - Go to the Code scanning settings and switch to Advanced CodeQL scanning. Here you can customize the workflow
 - Remove the python analysis and save the workflow. Notice that it uses a matrix
 
-## Exercise 4 - Advanced Code Scanning
+## Exercise 4 - Advanced Code Security
 
 ### Switch to security-and-quality
 
